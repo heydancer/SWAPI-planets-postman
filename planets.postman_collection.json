@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "d3b74f11-7fbe-4830-9582-d96b852aaacf",
+		"name": "\"SWAPI API\"  - planets",
+		"description": "Endpoints:\n\n- /planets/ -- get all the planets resources\n- /planets/:id/ -- get a specific planets resource\n- /planets/schema/ -- view the JSON schema for this resource\n\nAttributes:\n\n- name string -- The name of this planet.\n- diameter string -- The diameter of this planet in kilometers.\n- rotation_period string -- The number of standard hours it takes for this planet to complete a single rotation on its axis.\n- orbital_period string -- The number of standard days it takes for this planet to complete a single orbit of its local star.\n- gravity string -- A number denoting the gravity of this planet, where \"1\" is normal or 1 standard G. \"2\" is twice or 2 standard Gs. \"0.5\" is half or 0.5 standard Gs.\n- population string -- The average population of sentient beings inhabiting this planet.\n- climate string -- The climate of this planet. Comma separated if diverse.\n- terrain string -- The terrain of this planet. Comma separated if diverse.\n- surface_water string -- The percentage of the planet surface that is naturally occurring water or bodies of water.\n- residents array -- An array of People URL Resources that live on this planet.\n- films array -- An array of Film URL Resources that this planet has appeared in.\n- url string -- the hypermedia URL of this resource.\n- created string -- the ISO 8601 date format of the time that this resource was created.\n- edited string -- the ISO 8601 date format of the time that this resource was edited.\n\nSearch Fields:\n\n-name",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all the planets resources",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"description": "Parameter allows you to move between pages",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Request returns a list of all planets and their resources with the possibility of pagination"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the planets resources without body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"description": "Parameter allows you to move between pages",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Request returns service information in headers"
+			},
+			"response": []
+		},
+		{
+			"name": "Method returns a description of the connection parameters for all planets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"description": "Parameter allows you to move between pages",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Request returns a description of the connection parameters for all planets"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific planets resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/1/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						"1",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Request returns specific planet with resources by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific planets resource without body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/1/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						"1",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Request returns service information in headers"
+			},
+			"response": []
+		},
+		{
+			"name": "Method returns a description of the connection parameters for current planet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/1/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						"1",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Request returns a description of the connection parameters for current planet"
+			},
+			"response": []
+		},
+		{
+			"name": "Get planet by search filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/?search=Bespin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "Bespin"
+						}
+					]
+				},
+				"description": "Request searches for a specific planet by name"
+			},
+			"response": []
+		},
+		{
+			"name": "Get planet by search filter without body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/?search=Bespin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "Bespin"
+						}
+					]
+				},
+				"description": "Request returns service information in header"
+			},
+			"response": []
+		},
+		{
+			"name": "Method returns a description of the connection parameters for planet by name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/?search=Bespin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						""
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee",
+							"description": "Wookiee is for our tall hairy allies who speak Wookiee, this encoding is identical to JSON except with wookiee translations.",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "Bespin"
+						}
+					]
+				},
+				"description": "Request returns a description of the connection parameters for planet by name"
+			},
+			"response": []
+		},
+		{
+			"name": "View JSON schema",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/planets/schema",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"planets",
+						"schema"
+					]
+				},
+				"description": "View the JSON schema for this resource"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://swapi.dev/api"
+		}
+	]
+}
